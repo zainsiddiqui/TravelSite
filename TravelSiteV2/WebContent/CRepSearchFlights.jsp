@@ -30,7 +30,7 @@ if (details != null){
 %>
 <br>
 
-<form method="post" action="CRepPostSearch.jsp">
+<form method="post" action="CusRepPostSearch.jsp">
 		Customer User<input type = "text" name ="Username" >
 		<h1>Flight Details:</h1>
 		<!--  drop box for round trip or one way -->
@@ -39,13 +39,15 @@ if (details != null){
 			<option value="0">Round Trip</option>
 		</select>&nbsp;
 		<br>
-		
+		<br>
 		<!--  drop box for economy classes -->
 		<select name="classE" size=1>
 			<option value="E">Economy</option>
 			<option value="B">Business</option>
 			<option value="F">First</option>
 		</select>&nbsp;
+		<br></br>
+		<br></br>
 		<br>
 		
 		<!--  drop box for possible from airports -->
