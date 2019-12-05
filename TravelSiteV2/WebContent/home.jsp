@@ -29,11 +29,11 @@ out.println("<a href ="+link1+">Ticket History</a>");
 
 String link2 = "search.jsp?faults=none";
 out.println("<a href ="+link2+">Search Flights</a>");
-} else if (type.equals("SiteAdmin")) {
-out.println("<p>Welcome Site Admin: "+name+"</p>");
+} else if (type.equals("admin")) {
+out.println("<p>Registered New Customer Rep</p>");
 
-String link1 = "employeeSignup.jsp";
-out.println("<a href ="+link1+">Register an Employee</a>");
+String link1 = "AdminHome.jsp";
+out.println("<a href ="+link1+">AdminHome</a>");
 } else {
 out.println("<p>Welcome Customer Rep: "+name+"</p>");
 String link1 = "Airports.jsp";
