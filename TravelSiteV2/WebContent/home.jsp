@@ -54,6 +54,7 @@ details = request.getParameter("waitlist");
 if (details != null){
 if (details.equals("true")){
 out.println("Sucessfully joined Waitlist.");
+//Hello
 }
 }
 %>
