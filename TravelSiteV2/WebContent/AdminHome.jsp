@@ -87,7 +87,7 @@ View Customer that generated most revenue:
 
 <br>
 
-View top 5 most active flights:
+View top 3 most active flights:
 <form action="AdminCheckActiveFlights.jsp" method="post">
 <pre>
 	<input type="submit" value="Check">
@@ -97,7 +97,7 @@ View top 5 most active flights:
 <br>
 
 See all flights in an airport
-<form action="AirportFlights.jsp" method="post">
+<form action="AdminCheckFlightsAtAirport.jsp" method="post">
 <pre>
 Enter AirportID: <input type="text" name="airport">
 	<input type="submit" value="Submit">
