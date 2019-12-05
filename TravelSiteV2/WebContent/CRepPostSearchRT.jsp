@@ -16,14 +16,11 @@
 String link = "signout.jsp";
 out.println("<a href ="+link+">Signout</a>");
 String name = (String)session.getAttribute("uname");
-
-
 SearchResult current = (SearchResult) request.getSession().getAttribute("chosen");
 if (current == null){
 	response.sendRedirect("CRepSearch.jsp?faults=tooLong");
 	return;
 }
-
 String classE = current.economy;
 String dAirport = current.dAirport;
 String aAirport = current.aAirport;
@@ -33,7 +30,6 @@ String aDates = current.aDates;
 String sortType = current.sortType;
 String budget = current.budget;
 int stops = current.stops;
-
 String orderBy = sortType;
 if (orderBy.equals("Price")){
 	orderBy = "departureDateTime";
@@ -41,8 +37,6 @@ if (orderBy.equals("Price")){
 if (orderBy == null || orderBy.isEmpty() ){
 	orderBy = "departureDateTime";
 }
-
-
 allQueries aq = new allQueries(orderBy, classE);
 ArrayList<java.sql.Date> flexDates = aq.makeFlexibleDates(dDates, aDates, flexible);
 if (flexDates.size() > 4) {
@@ -53,20 +47,16 @@ java.sql.Date dDate = flexDates.get(0);
 java.sql.Date dDate1 = flexDates.get(1);
 java.sql.Date aDate = flexDates.get(2);
 java.sql.Date aDate1 = flexDates.get(3);
-
 boolean roundTrip = true;
-
 ConnectDB db = new ConnectDB();
 Connection conn = db.getConnection();
 ArrayList<SearchResult> allResults = new ArrayList<SearchResult>();
-
 String priceType = "Price"+classE;
 String directCheck = "and FlyToAirportID =? ";
 String nested = "and FlyToAirportID <>? ";
 String union = "UNION ALL ";
 String crossJoin = "CROSS JOIN ";
 String order = "ORDER BY ";
-
 String directOneWay = "select OperatedByAirlineID, FlyFromFlightNumber as layoverFlightNumber, FlyFromAirportID as departureAirport, "
 		+"Departure as departureDateTime, FlyToAirportID as layoverAirport, Arrival as layoverArrival, "
 		+"PriceE as layoverPrice, Capacity as layoverCapacity, "
@@ -95,7 +85,6 @@ String stopsOneWay = "("+directOneWay+directCheck+")"+union
 					+"where m.Departure >= t.layoverArrival "
 					+"and m.Departure <= date_add(t.layoverArrival, INTERVAL 1 day) "
 					+"and o.FlyToAirportID = ?) ";
-
 if (stops == 0){
 		String qry = directOneWay+directCheck+order+orderBy;
 		PreparedStatement q = conn.prepareStatement(qry);
@@ -105,10 +94,8 @@ if (stops == 0){
 		q.setDate(3, aDate1);
 		q.setString(4, current.airlineID);
 		q.setString(5, dAirport);
-
 		ResultSet rs = q.executeQuery();
 		while(rs.next()){
-
 			SearchResult c = new SearchResult(current);
 			if (!c.airlineID.equals(rs.getString("OperatedByAirlineID"))){
 				continue;
@@ -147,7 +134,6 @@ if (stops == 0){
 		q.setString(11, dAirport);
  	 	ResultSet rs = q.executeQuery();
 		while(rs.next()){
-
 			SearchResult c = new SearchResult(current);
 			c.airlineID = rs.getString("OperatedByAirlineID");
 			if (!c.airlineID.equals(rs.getString("OperatedByAirlineID"))){
@@ -192,12 +178,10 @@ if (stops == 0){
 		q.close();
 }
 db.closeConnection(conn);
-
 if (allResults.size()==0){
 	response.sendRedirect("CRepPostSearch.jsp?faults=nores");
 	return;
 } 
-
 if (!budget.isEmpty()){
 	float max = Float.parseFloat(budget);
 	for (Iterator<SearchResult> iterator = allResults.iterator(); iterator.hasNext();) {
@@ -207,66 +191,49 @@ if (!budget.isEmpty()){
 	    }
 	}
 }
-
 if (allResults.size()==0){
  	response.sendRedirect("CRepPostSearch.jsp?faults=nores");
 	return;
 } 
-
 if (sortType == null || sortType.isEmpty() || sortType.equals("Price")){
 	Collections.sort(allResults, SearchResult.FlightPrice);
 } 
-
-
 session.setAttribute("FlightSearchResults", allResults);
 out.print("<table border=1 frame=void rules=rows>");
 out.print("<tr>");
-
 out.print("<td>");
 out.print("Airline");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Departure Airport");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Departure Date");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Departure Time");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Arrival Airport");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Arrival Date");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Arrival Time");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Stops");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Layover");
 out.print("</td>");
-
 out.print("<td>");
 out.print("Price");
 out.print("</td>");
-
 out.print("<td>");
 out.print("</td>");
-
 out.print("</tr>");
-
 for(int i =0; i <allResults.size(); i++){
 	SearchResult c = allResults.get(i);
 	String airline = c.airlineID;
@@ -348,9 +315,7 @@ for(int i =0; i <allResults.size(); i++){
 	out.print("</td>");
 	out.print("</tr>");
 }
-
 out.print("</table>");
-
 %>
 
 </body>

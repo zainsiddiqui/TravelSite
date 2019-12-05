@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -12,13 +12,11 @@ String details = request.getParameter("account");
 if (details == null || details.equals("off")){
 String link = "login.jsp?login=true";
 out.println("<a href ="+link+">Login</a>");
-
 String link1 = "signup.jsp?faults=none";
 out.println("<a href ="+link1+">Signup</a>");
 } else {
 String link = "signout.jsp";
 out.println("<a href ="+link+">Signout</a>");
-
 //Getting user data
 String name = (String)session.getAttribute("username");
 String type = (String)session.getAttribute("type");

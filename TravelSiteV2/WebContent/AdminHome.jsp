@@ -11,8 +11,8 @@ Welcome Admin
 <%
 String link1 = "employeeSignup.jsp";
 out.println("<a href ="+link1+">Register an Employee</a>");
-String link = "signout.jsp";
-out.println("<a href ="+link+">Signout</a>");
+String link = "logout.jsp";
+out.println("<a href ="+link+">Logout</a>");
 %>
 <br>
 <br>
@@ -23,14 +23,13 @@ if (details!= null){
 	out.println(details);
 	
 }
-
 %>
 <br>
 <br>
-Search/edit customer information 
-<form action="SearchCust.jsp" method="post">
+Search, Edit, and Delete User Information 
+<form action="AdminSearchCustomer.jsp" method="post">
 <pre>
-Enter customer: <input type="text" name="searchCust">
+Enter customer: <input type="text" name="searchCustomer">
 	<input type="submit" value="Submit">
 </pre>
 </form>
@@ -38,7 +37,7 @@ Enter customer: <input type="text" name="searchCust">
 <br>
 
 See sales for a given month and year
-<form action="Sales.jsp" method="post">
+<form action="AdminCheckSales.jsp" method="post">
 <pre>
 Enter date in form of year/month "0000/00": <input type="text" name="date">
 	<input type="submit" value="Submit">

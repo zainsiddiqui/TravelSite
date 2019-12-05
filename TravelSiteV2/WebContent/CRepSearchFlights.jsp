@@ -14,7 +14,6 @@
 String link = "signout.jsp";
 out.println("<a href ="+link+">Signout</a>");
 //String name = (String)session.getAttribute("username");
-
 String details = request.getParameter("faults");
 if (details != null){
 	if (details.equals("empty")){
@@ -30,7 +29,7 @@ if (details != null){
 %>
 <br>
 
-<form method="post" action="CusRepPostSearch.jsp">
+<form method="post" action="CRepPostSearch.jsp">
 		Customer User<input type = "text" name ="Username" >
 		<h1>Flight Details:</h1>
 		<!--  drop box for round trip or one way -->
