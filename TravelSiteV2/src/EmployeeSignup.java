@@ -1,3 +1,5 @@
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -103,7 +105,7 @@ public class EmployeeSignup extends HttpServlet {
 				stmt.setString(3, "CustomerRep");
 				stmt.executeUpdate();
 				HttpSession session = request.getSession();
-				response.sendRedirect("AdminHome.jsp");
+				response.sendRedirect("home.jsp?account=on");
 			}
 			rs.close();
 			rs1.close();

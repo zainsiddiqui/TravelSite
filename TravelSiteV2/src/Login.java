@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -75,7 +76,7 @@ public class Login extends HttpServlet {
 			}
 
 			} else {
-				session.setAttribute("type", "Employee");
+				session.setAttribute("type", "employee");
 				response.sendRedirect("EmployeeHome.jsp?account=on");
 				
 			}
