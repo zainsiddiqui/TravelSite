@@ -11,22 +11,22 @@
 Add a Flight
 <form action = "FlightsAdd" method = "post">
 
-	Flight Number <input type = "text" name ="FlightNumberInsert" >
-	Days of Operation <input type = "text" name = "DaysOfOperationInsert">
-	Booking Fee <input type = "text" name = "BookingFeeInsert">
-	Direct/Indirect <input type = "text" name = "Direct/IndirectInsert">
-	Domestic/International <input type = "text" name = "Domestic/InternationalInsert">
-	Airline ID <input type = "text" name = "AirlineIdInsert">
-	Aircraft ID <input type = "text" name = "AircraftIdInsert">
-	Price Economy <input type ="text" name ="PriceEInsert">
-	Price Business <input type ="text" name ="PriceBInsert">
-	Price First <input type ="text" name ="PriceFInsert">
-	Arrival Time <input type = "text" name = "ArrivalTimeInsert">
-	Arrival Date <input type = "text" name = "ArrivalDateInsert">
-	Departure Time <input type = "text" name = "DepartureTimeInsert">
-	Departure Date <input type = "text" name = "DepartureDateInsert">
-	Arrival Airport <input type = "text" name = "ArrivalAirportInsert">
-	Departure Airport <input type = "text" name = "DepartureAirportInsert">
+	Flight Number <input type = "text" name ="FlightNumberAdd" >
+	Days of Operation <input type = "text" name = "DaysOfOperationAdd">
+	Booking Fee <input type = "text" name = "BookingFeeAdd">
+	Direct/Indirect <input type = "text" name = "Direct/IndirectAdd">
+	Domestic/International <input type = "text" name = "Domestic/InternationalAdd">
+	Airline ID <input type = "text" name = "AirlineIdAdd">
+	Aircraft ID <input type = "text" name = "AircraftIdAdd">
+	Price Economy <input type ="text" name ="PriceEAdd">
+	Price Business <input type ="text" name ="PriceBAdd">
+	Price First <input type ="text" name ="PriceFAdd">
+	Arrival Time <input type = "text" name = "ArrivalTimeAdd">
+	Arrival Date <input type = "text" name = "ArrivalDateAdd">
+	Departure Time <input type = "text" name = "DepartureTimeAdd">
+	Departure Date <input type = "text" name = "DepartureDateAdd">
+	Arrival Airport <input type = "text" name = "ArrivalAirportAdd">
+	Departure Airport <input type = "text" name = "DepartureAirportAdd">
 	
 	<input type="submit" value="Add Flight">
 	

@@ -64,7 +64,7 @@ public class AircraftEdit extends HttpServlet {
 		
 		
 		//response.sendRedirect("login.jsp");
-		response.sendRedirect("home.jsp?account=on");
+		response.sendRedirect("EmployeeHome.jsp?account=on");
 	}
 
 }
