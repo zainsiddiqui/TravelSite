@@ -76,7 +76,7 @@ public class Login extends HttpServlet {
 			}
 
 			} else {
-				session.setAttribute("type", "employee");
+				session.setAttribute("type", "Employee");
 				response.sendRedirect("EmployeeHome.jsp?account=on");
 				
 			}
