@@ -28,9 +28,9 @@ if (details!= null){
 <br>
 <br>
 Search/edit customer information 
-<form action="SearchCust.jsp" method="post">
+<form action="AdminSearchCustomer.jsp" method="post">
 <pre>
-Enter customer: <input type="text" name="searchCust">
+Enter customer: <input type="text" name="searchCustomer">
 	<input type="submit" value="Submit">
 </pre>
 </form>
@@ -38,7 +38,7 @@ Enter customer: <input type="text" name="searchCust">
 <br>
 
 See sales for a given month and year
-<form action="Sales.jsp" method="post">
+<form action="AdminCheckSales.jsp" method="post">
 <pre>
 Enter date in form of year/month "0000/00": <input type="text" name="date">
 	<input type="submit" value="Submit">

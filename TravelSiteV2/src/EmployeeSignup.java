@@ -105,7 +105,7 @@ public class EmployeeSignup extends HttpServlet {
 				stmt.setString(3, "CustomerRep");
 				stmt.executeUpdate();
 				HttpSession session = request.getSession();
-				response.sendRedirect("home.jsp?account=on");
+				response.sendRedirect("AdminHome.jsp");
 			}
 			rs.close();
 			rs1.close();
