@@ -79,18 +79,18 @@ Type Flight number or customer username or Airline ID: <input type="text" name="
 <br>
 
 View Customer that generated most revenue:
-<form action="BestCust.jsp">
+<form action="AdminMostRevenueByCustomer.jsp">
 <pre>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Check">
 </pre>
 </form>
 
 <br>
 
 View top 5 most active flights:
-<form action="ActiveFlights.jsp" method="post">
+<form action="AdminCheckActiveFlights.jsp" method="post">
 <pre>
-	<input type="submit" value="Submit">
+	<input type="submit" value="Check">
 </pre>
 </form>
 
