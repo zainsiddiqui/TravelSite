@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 /**
- * Servlet implementation class AirportsEdit
+ * Servlet implementation class AircraftEdit
  */
-@WebServlet("/AirportsEdit")
-public class AirportsEdit extends HttpServlet {
+@WebServlet("/AircraftEdit")
+public class AircraftEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AirportsEdit() {
+    public AircraftEdit() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,23 +40,28 @@ public class AirportsEdit extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		String Original = request.getParameter("OriginalIDEdit");
+		String PREV_ID = request.getParameter("AircraftID");
+		String AirlineEdit = request.getParameter("AirlinesOwnerEdit");
 		String ID = request.getParameter("IDEdit");
-		String Name = request.getParameter("AirportNameEdit");
-		String City = request.getParameter("AirportCityEdit");
-		String Country = request.getParameter("AirportCountryEdit");
+		int Capacity = Integer.parseInt( request.getParameter("CapacityEdit"));
+		String Name = request.getParameter("AircraftNameEdit");
 		
 		try {
 			ConnectDB db = new ConnectDB();
 			java.sql.Connection con = db.getConnection();
-			java.sql.Statement update = con.createStatement();
-			update.executeUpdate("UPDATE Airports SET AirportID = '"+ID+"', Name = '"+Name+"', City = '"+City+"', Country = '"+Country+"' WHERE AirportID = '"+Original+"' ");
+			java.sql.Statement UPDATE1 = con.createStatement();
+			java.sql.Statement UPDATE2 = con.createStatement();
+			UPDATE1.executeUpdate("UPDATE Aircrafts SET AircraftID='"+ID+"', Name='"+Name+"', Capacity="+Capacity+" WHERE AircraftID='"+PREV_ID+"'");
+			UPDATE2.executeUpdate("UPDATE Owns SET OwnsAirlineID = (SELECT AirlineID FROM Airline WHERE AirlineID='"+AirlineEdit+"'), OwnsAircraftId = (SELECT AircraftID FROM Aircrafts WHERE AircraftID='"+ID+"') WHERE OwnsAircraftID='"+ID+"'");
 			con.close();	
-		} 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		
+		
 		
 		//response.sendRedirect("login.jsp");
 		response.sendRedirect("home.jsp?account=on");

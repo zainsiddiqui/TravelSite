@@ -43,8 +43,8 @@ public class AirportsDelete extends HttpServlet {
 		try {
 			ConnectDB db = new ConnectDB();
 			java.sql.Connection con = db.getConnection();
-			java.sql.Statement stmt1 = con.createStatement();
-			int rs = stmt1.executeUpdate("DELETE FROM Airports WHERE AirportID='"+AircraftID+"'");
+			java.sql.Statement delete = con.createStatement();
+			delete.executeUpdate("DELETE FROM Airports WHERE AirportID='"+AircraftID+"'");
 			con.close();	
 		} 
 		catch (SQLException e) {

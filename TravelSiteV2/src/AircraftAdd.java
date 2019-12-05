@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 /**
- * Servlet implementation class AirportsEdit
+ * Servlet implementation class AircraftAdd
  */
-@WebServlet("/AirportsEdit")
-public class AirportsEdit extends HttpServlet {
+@WebServlet("/AircraftAdd")
+public class AircraftAdd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AirportsEdit() {
+    public AircraftAdd() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,20 +40,21 @@ public class AirportsEdit extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		String Original = request.getParameter("OriginalIDEdit");
-		String ID = request.getParameter("IDEdit");
-		String Name = request.getParameter("AirportNameEdit");
-		String City = request.getParameter("AirportCityEdit");
-		String Country = request.getParameter("AirportCountryEdit");
+		String Airline = request.getParameter("AirlineOwnerAdd");
+		String ID = request.getParameter("AircraftID");
+		int Capacity = Integer.parseInt( request.getParameter("CapacityAdd"));
+		String Name = request.getParameter("AircraftNameAdd");
+		
 		
 		try {
 			ConnectDB db = new ConnectDB();
 			java.sql.Connection con = db.getConnection();
-			java.sql.Statement update = con.createStatement();
-			update.executeUpdate("UPDATE Airports SET AirportID = '"+ID+"', Name = '"+Name+"', City = '"+City+"', Country = '"+Country+"' WHERE AirportID = '"+Original+"' ");
+			java.sql.Statement INSERT = con.createStatement();
+			java.sql.Statement INSERT2 = con.createStatement();
+			INSERT.executeUpdate("insert into Aircrafts (AircraftID, Name, Capacity) values ('"+ID+"','"+Name+"','"+Capacity+"' )");
+			INSERT2.executeUpdate("insert into Owns (OwnsAirlineID, OwnsAircraftID) values ((SELECT AirlineID FROM Airline WHERE AirlineID='"+Airline+"'),(SELECT AircraftID FROM Aircrafts WHERE AircraftID='"+ID+"'))");
 			con.close();	
-		} 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

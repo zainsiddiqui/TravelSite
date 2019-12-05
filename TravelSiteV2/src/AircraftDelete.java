@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 /**
- * Servlet implementation class AirportsEdit
+ * Servlet implementation class AircraftDelete
  */
-@WebServlet("/AirportsEdit")
-public class AirportsEdit extends HttpServlet {
+@WebServlet("/AircraftDelete")
+public class AircraftDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AirportsEdit() {
+    public AircraftDelete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,23 +40,20 @@ public class AirportsEdit extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		String Original = request.getParameter("OriginalIDEdit");
-		String ID = request.getParameter("IDEdit");
-		String Name = request.getParameter("AirportNameEdit");
-		String City = request.getParameter("AirportCityEdit");
-		String Country = request.getParameter("AirportCountryEdit");
+		String ID = request.getParameter("AircraftID");
 		
 		try {
 			ConnectDB db = new ConnectDB();
 			java.sql.Connection con = db.getConnection();
-			java.sql.Statement update = con.createStatement();
-			update.executeUpdate("UPDATE Airports SET AirportID = '"+ID+"', Name = '"+Name+"', City = '"+City+"', Country = '"+Country+"' WHERE AirportID = '"+Original+"' ");
+			java.sql.Statement delete = con.createStatement();
+			delete.executeUpdate("DELETE FROM Aircrafts WHERE AircraftID='"+ID+"'");
 			con.close();	
 		} 
 		catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		
 		//response.sendRedirect("login.jsp");
 		response.sendRedirect("home.jsp?account=on");
