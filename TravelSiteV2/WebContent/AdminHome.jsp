@@ -48,9 +48,9 @@ Enter date in form of year/month "0000/00": <input type="text" name="date">
 <br>
 
 See the reservation a customer made or reservations a flight has
-<form action="Reservation.jsp">
+<form action="AdminReservation.jsp">
 Select whether to see reservations from a flight or a customer
-  <select name="Reservation">
+  <select name="AdminReservation">
   <option value="1">Flight</option>
   <option value="2">Customer</option>
   </select>
