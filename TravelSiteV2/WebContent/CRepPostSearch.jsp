@@ -32,7 +32,7 @@ String aDates = request.getParameter("aDate");
 
 
 if (tripType==null|| classE==null || dAirport==null || aAirport==null || dDates==null || aDates==null || flexible==null) {
-	response.sendRedirect("CRepPostSearch.jsp?faults=empty");
+	response.sendRedirect("CRepSearchFlights.jsp?faults=empty");
 	return;
 }
 

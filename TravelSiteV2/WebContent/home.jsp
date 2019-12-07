@@ -44,9 +44,9 @@ String link3 = "Flights.jsp";
 out.println("<a href="+link3+" >Flights</a>");
 String link4 = "retrieveWaitlist.jsp";
 out.println("<a href="+link4+" >Check Waitlist</a>");
-String link5 = "CustomerRepSearch.jsp";
+String link5 = "CRepSearchFlights.jsp";
 out.println("<a href="+link5+" >Reserve Flights for Customer</a>");
-String link6 = "CREditFlight.jsp";
+String link6 = "CRepEditFlights.jsp";
 out.println("<a href="+link6+" >Edit Flights for Customer</a>");
 }
 }

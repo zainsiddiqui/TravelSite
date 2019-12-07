@@ -13,17 +13,21 @@
 
 
 <%
-String link = "logout.jsp";
-out.println("<a href ="+link+">Logout</a>");
-String name = (String)session.getAttribute("uname");
+String link = "signout.jsp";
+out.println("<a href ="+link+">Signout</a>");
+String name = (String)session.getAttribute("username");
 
+String link1 = "ticketHistory.jsp";
+out.println("<a href ="+link1+">Ticket History</a>");
+
+String link2 = "search.jsp?faults=none";
+out.println("<a href ="+link2+">Search Flights</a>");
 
 SearchResult current = (SearchResult) request.getSession().getAttribute("chosen");
 if (current == null){
-	response.sendRedirect("CRepSearchFlights.jsp?faults=tooLong");
+	response.sendRedirect("search.jsp?faults=tooLong");
 	return;
 }
-
 String classE = current.economy;
 String dAirport = current.dAirport;
 String aAirport = current.aAirport;
@@ -35,18 +39,19 @@ String budget = current.budget;
 int stops = current.stops;
 
 String orderBy = sortType;
-if (orderBy.equals("Price")){
-	orderBy = "departureDateTime";
-} 
 if (orderBy == null || orderBy.isEmpty() ){
 	orderBy = "departureDateTime";
 }
+if (orderBy.equals("Price")){
+	orderBy = "departureDateTime";
+} 
+
 
 
 allQueries aq = new allQueries(orderBy, classE);
 ArrayList<java.sql.Date> flexDates = aq.makeFlexibleDates(dDates, aDates, flexible);
 if (flexDates.size() > 4) {
-	response.sendRedirect("CRepPostSearchRT.jsp?faults=date");
+	response.sendRedirect("search.jsp?faults=date");
 	return;
 }
 java.sql.Date dDate = flexDates.get(0);
@@ -108,7 +113,6 @@ if (stops == 0){
 
 		ResultSet rs = q.executeQuery();
 		while(rs.next()){
-
 			SearchResult c = new SearchResult(current);
 			if (!c.airlineID.equals(rs.getString("OperatedByAirlineID"))){
 				continue;
@@ -147,13 +151,11 @@ if (stops == 0){
 		q.setString(11, dAirport);
  	 	ResultSet rs = q.executeQuery();
 		while(rs.next()){
-
 			SearchResult c = new SearchResult(current);
 			c.airlineID = rs.getString("OperatedByAirlineID");
 			if (!c.airlineID.equals(rs.getString("OperatedByAirlineID"))){
 				continue;
 			}
-			
 			c.departureAirport1 = rs.getString("departureAirport");
 			c.departureDate1= rs.getDate("departureDateTime");
 			c.departureTime1 = rs.getTime("departureDateTime");
@@ -184,9 +186,10 @@ if (stops == 0){
 				c.full = aq.isFilled(c.flightNumberA1, capacity, c.full);
 				c.price+= aq.priceClass((float) rs.getInt("arrivalPrice") );		
 			}
-			
+
 			c.redirect = true;
 			allResults.add(c);
+			
 		} 
  		rs.close();
 		q.close();
@@ -194,7 +197,7 @@ if (stops == 0){
 db.closeConnection(conn);
 
 if (allResults.size()==0){
-	response.sendRedirect("CRepPostSearch.jsp?faults=nores");
+	response.sendRedirect("search.jsp?faults=nores");
 	return;
 } 
 
@@ -206,16 +209,20 @@ if (!budget.isEmpty()){
 	        iterator.remove();
 	    }
 	}
+
 }
 
+
+
 if (allResults.size()==0){
- 	response.sendRedirect("CRepPostSearch.jsp?faults=nores");
+ 	response.sendRedirect("search.jsp?faults=nores");
 	return;
 } 
 
 if (sortType == null || sortType.isEmpty() || sortType.equals("Price")){
 	Collections.sort(allResults, SearchResult.FlightPrice);
 } 
+
 
 
 session.setAttribute("FlightSearchResults", allResults);
@@ -280,6 +287,7 @@ for(int i =0; i <allResults.size(); i++){
 	if (c.hasLayover1){
 		stops1 = "1 stop";
 	}
+
 	out.print("<tr>");
 	
 	out.print("<td>");
@@ -315,7 +323,7 @@ for(int i =0; i <allResults.size(); i++){
 	out.print("</td>");
 	
 	out.print("<td>");
-		if (c.hasLayover){
+		if (c.hasLayover1){
 			out.print(c.layoverAirport1);
 		}
 	out.print("</td>");
@@ -326,8 +334,8 @@ for(int i =0; i <allResults.size(); i++){
 	
 	out.print("<td>");
 		String post = "post";
-		String editer = "CRJoinWaitlist";
-		String editer1 = "CRBuyFlight";
+		String editer = "JoinWaitlist";
+		String editer1 = "BuyFlight";
 		String hidden = "hidden";
 		String name1 = "index";
 		String index = Integer.toString(i);
