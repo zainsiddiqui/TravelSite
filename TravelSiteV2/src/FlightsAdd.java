@@ -53,41 +53,44 @@ public class FlightsAdd extends HttpServlet {
 		
 	
 		String ArrivalAirport = request.getParameter("ArrivalAirportAdd");
-		
-		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-		
-		String arrivalDatestr = request.getParameter("ArrivalDateAdd");
-		String arrivaltimestr = request.getParameter("ArrivalTimeAdd");
-		
-		Time arrivalTime = null;
-		arrivalTime = Time.valueOf(arrivaltimestr);
-		Date arrivalDatejava = null;
-	
-		try {
-			 arrivalDatejava = formatter.parse(arrivalDatestr);
-		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		java.sql.Date arrivalDate = new java.sql.Date(arrivalDatejava.getTime());
-		
-		
-		String departuretimestr = request.getParameter("DepartureTimeAdd");
-		String departureDatestr = request.getParameter("DepartureDateAdd");
-		
-		Time arrivalTimeDep = null;
-		arrivalTimeDep = Time.valueOf(departuretimestr);
-		Date DepartureDatejava = null;
-		
-		try {
-			 DepartureDatejava = formatter.parse(departureDatestr);
-		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		java.sql.Date departureDate = new java.sql.Date(DepartureDatejava.getTime());
+//		
+//		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+//		
+//		String arrivalDatestr = request.getParameter("ArrivalDateAdd");
+//		String arrivaltimestr = request.getParameter("ArrivalTimeAdd");
+//		
+//		Time arrivalTime = null;
+//		arrivalTime = Time.valueOf(arrivaltimestr);
+//		Date arrivalDatejava = null;
+//	
+//		try {
+//			 arrivalDatejava = formatter.parse(arrivalDatestr);
+//		} catch (ParseException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//		
+//		java.sql.Date arrivalDate = new java.sql.Date(arrivalDatejava.getTime());
+//		
+//		
+//		String departuretimestr = request.getParameter("DepartureTimeAdd");
+//		String departureDatestr = request.getParameter("DepartureDateAdd");
+//		
+//		Time arrivalTimeDep = null;
+//		arrivalTimeDep = Time.valueOf(departuretimestr);
+//		Date DepartureDatejava = null;
+//		
+//		try {
+//			 DepartureDatejava = formatter.parse(departureDatestr);
+//		} catch (ParseException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//		
+//		java.sql.Date departureDate = new java.sql.Date(DepartureDatejava.getTime());
+//		
+		String ArrivalDateTime = request.getParameter("ArrivalDateTimeAdd");
+		String DepartureDateTime = request.getParameter("DepartureDateTimeAdd");
 		
 		String DepartureAirport = request.getParameter("DepartureAirportAdd");
 		String AirlineID = request.getParameter("AirlineIdAdd");
@@ -102,21 +105,26 @@ public class FlightsAdd extends HttpServlet {
 			java.sql.Statement s3 = con.createStatement();
 			java.sql.Statement s4 = con.createStatement();
 			java.sql.Statement s5 = con.createStatement();
-			
-			s1.executeUpdate("insert into Flights (FlightNumber, isInternational, DaysOfOperation, PriceE, PriceB, PriceF) values ("+FlightNum+","+DomesticInternational+",'"+Days+"',"+PriceE+","+PriceB+","+PriceF+")");
-			s2.executeUpdate("insert into FlyTo (FlyToFlightNumber, FlyToAirportID, ArrivalTime, ArrivalDate) values ((SELECT FlightNumber FROM Flights WHERE FlightNumber="+FlightNum+"), (SELECT AirportID FROM Airports WHERE AirportID='"+ArrivalAirport+"'), '"+arrivalTime+"', '"+arrivalDate+"')");
-			s3.executeUpdate("insert into FlyFrom (FlyFromFlightNumber, FlyFromAirportID, DepartureTime, DepartureDate) values ((SELECT FlightNumber FROM Flights WHERE FlightNumber="+FlightNum+"), (SELECT AirportID FROM Airports WHERE AirportID='"+DepartureAirport+"'), '"+arrivalTimeDep+"', '"+departureDate+"')");
+			int DI;
+			if (DomesticInternational.equals("International")) {
+				DI = 1;
+			}else {
+				DI = 0;
+			}
+			s1.executeUpdate("insert into Flights (FlightNumber, isInternational, DaysOfOperation, PriceE, PriceB, PriceF) values ("+FlightNum+",'"+DI+"','"+Days+"',"+PriceE+","+PriceB+","+PriceF+")");
+			s2.executeUpdate("insert into FlyTo (FlyToFlightNumber, FlyToAirportID, Arrival) values ((SELECT FlightNumber FROM Flights WHERE FlightNumber="+FlightNum+"), (SELECT AirportID FROM Airports WHERE AirportID='"+ArrivalAirport+"'), '"+ArrivalDateTime+"')");
+			s3.executeUpdate("insert into FlyFrom (FlyFromFlightNumber, FlyFromAirportID, Departure) values ((SELECT FlightNumber FROM Flights WHERE FlightNumber="+FlightNum+"), (SELECT AirportID FROM Airports WHERE AirportID='"+DepartureAirport+"'), '"+DepartureDateTime+"')");
 			s4.executeUpdate("insert into Have (HaveFlightNumber, HaveAircraftID) values ((SELECT FlightNumber FROM Flights WHERE FlightNumber="+FlightNum+") ,(SELECT AircraftID FROM Aircrafts WHERE AircraftID='"+AircraftID+"'))");
 			s5.executeUpdate("insert into OperatedBy (OperatedByFlightNumber, OperatedByAirlineID) values ((SELECT FlightNumber FROM Flights WHERE FlightNumber="+FlightNum+" ),(SELECT AirlineID FROM Airline WHERE AirlineID='"+AirlineID+"'))");
 			con.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
 		
 		
-		response.sendRedirect("EmployeeHome.jsp?account=on");
+		response.sendRedirect("EmployeeHome.jsp?");
 	}
 
 }

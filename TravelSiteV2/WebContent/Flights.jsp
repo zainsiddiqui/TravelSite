@@ -21,12 +21,10 @@ Add a Flight
 	Price Economy <input type ="text" name ="PriceEAdd">
 	Price Business <input type ="text" name ="PriceBAdd">
 	Price First <input type ="text" name ="PriceFAdd">
-	Arrival Time <input type = "text" name = "ArrivalTimeAdd">
-	Arrival Date <input type = "text" name = "ArrivalDateAdd">
-	Departure Time <input type = "text" name = "DepartureTimeAdd">
-	Departure Date <input type = "text" name = "DepartureDateAdd">
-	Arrival Airport <input type = "text" name = "ArrivalAirportAdd">
-	Departure Airport <input type = "text" name = "DepartureAirportAdd">
+	Arrival Date and Time ("YYYY-MM-DD hh:mm:ss") <input type = "text" name = "ArrivalDateTimeAdd">
+	Departure Date and Time ("YYYY-MM-DD hh:mm:ss") <input type = "text" name = "DepartureDateTimeAdd">
+	Arrival Airport ID <input type = "text" name = "ArrivalAirportAdd">
+	Departure Airport ID <input type = "text" name = "DepartureAirportAdd">
 	
 	<input type="submit" value="Add Flight">
 	
@@ -41,12 +39,10 @@ Edit a Flight
 	Booking Fee <input type = "text" name = "BookingFeeEdit">
 	Direct/Indirect <input type = "text" name = "Direct/IndirectEdit">
 	Domestic/International <input type = "text" name = "Domestic/InternationalEdit">
-	Arrival Time <input type = "text" name = "ArrivalTimeEdit">
-	Arrival Date <input type = "text" name = "ArrivalDateEdit">
-	Departure Time <input type = "text" name = "DepartureTimeEdit">
-	Departure Date <input type = "text" name = "DepartureDateEdit">
-	Arrival Airport <input type = "text" name = "ArrivalAirportEdit">
-	Departure Airport <input type = "text" name = "DepartureAirportEdit">
+	Arrival Date and Time ("YYYY-MM-DD hh:mm:ss") <input type = "text" name = "ArrivalDateTimeEdit">
+	Departure Date and Time ("YYYY-MM-DD hh:mm:ss") <input type = "text" name = "DepartureDateTimeEdit">
+	Arrival Airport ID <input type = "text" name = "ArrivalAirportEdit">
+	Departure Airport ID <input type = "text" name = "DepartureAirportEdit">
 	Airline ID <input type = "text" name = "AirlineIdEdit">
 	Aircraft ID <input type = "text" name = "AircraftIdEdit">
 	Price Economy <input type ="text" name ="PriceEEdit">

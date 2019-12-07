@@ -51,6 +51,13 @@ out.println("<a href="+link4+" >Preview Waitlist</a>");
 
 
 
+
+
+
+
+
+
+
 }
 }
 details = request.getParameter("waitlist");
