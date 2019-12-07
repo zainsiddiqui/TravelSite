@@ -22,11 +22,11 @@ String name = (String)session.getAttribute("username");
 
 String type = (String)session.getAttribute("type");
 if (type.equals("Customer")) {
-out.println("<p>Welcome Customer: "+name+"</p>");
+out.println("<h1><p>Welcome Customer: "+name+"</p></h1>");
 
 String link1 = "ticketHistory.jsp";
 out.println("<a href ="+link1+">Ticket History</a>");
-
+out.println("<br>");
 String link2 = "search.jsp?faults=none";
 out.println("<a href ="+link2+">Search Flights</a>");
 } else if (type.equals("admin")) {
@@ -38,14 +38,22 @@ out.println("<a href ="+link1+">AdminHome</a>");
 out.println("<p>Welcome Customer Rep: "+name+"</p>");
 String link1 = "Airports.jsp";
 out.println("<a href="+link1+" >Airports</a>");
+out.println("<br>");
 String link2 = "Aircrafts.jsp";
 out.println("<a href="+link2+" >Aircrafts</a>");
+out.println("<br>");
 String link3 = "Flights.jsp";
 out.println("<a href="+link3+" >Flights</a>");
+out.println("<br>");
+
 String link4 = "retrieveWaitlist.jsp";
 out.println("<a href="+link4+" >Check Waitlist</a>");
+out.println("<br>");
+
 String link5 = "CRepSearchFlights.jsp";
 out.println("<a href="+link5+" >Reserve Flights for Customer</a>");
+out.println("<br>");
+
 String link6 = "CRepEditFlights.jsp";
 out.println("<a href="+link6+" >Edit Flights for Customer</a>");
 }

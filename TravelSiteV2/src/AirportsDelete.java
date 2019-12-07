@@ -51,8 +51,6 @@ public class AirportsDelete extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 		//response.sendRedirect("login.jsp");
 		response.sendRedirect("EmployeeHome.jsp?account=on");
 	}

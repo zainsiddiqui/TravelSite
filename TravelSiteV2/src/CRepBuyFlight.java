@@ -108,8 +108,8 @@ public class CRepBuyFlight extends HttpServlet {
 				stmt4.setInt(2, tN);
 				stmt4.setInt(3, count);
 				count++;
-				stmt4.setInt(4, (int)(Math.random()*900+100));
-				//SET SEAT!!!!
+				stmt4.setInt(4, (int)(Math.random()*400));
+			
 				stmt4.executeUpdate();
 				stmt4.close();
 				
@@ -124,7 +124,7 @@ public class CRepBuyFlight extends HttpServlet {
 						stmt5.setInt(3, count);
 						count++;
 						//Setting Random Seat
-						stmt5.setInt(4, (int)(Math.random()*800+100+100));
+						stmt5.setInt(4, (int)(Math.random()*400));
 						stmt5.executeUpdate();
 						stmt5.close();
 					}
@@ -136,7 +136,7 @@ public class CRepBuyFlight extends HttpServlet {
 					stmt6.setInt(3, count);
 					count++;
 					//Setting Random Seat
-					stmt6.setInt(4, (int)(Math.random()*100+800+100));
+					stmt6.setInt(4, (int)(Math.random()*400+400));
 					stmt6.executeUpdate();
 					stmt6.close();
 				}

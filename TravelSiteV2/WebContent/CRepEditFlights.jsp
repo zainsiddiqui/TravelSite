@@ -13,7 +13,7 @@
 <h1> Edit Customer Flights </h1>
 Username <input type="text" name="Username">
 TicketNumber <input type="text" name="TicketNumber">
-Class <input type="text" name="Class">
+Class (econ,bus,first)<input type="text" name="Class">
 Meal <input type="text" name="meal">
 
 
