@@ -51,19 +51,19 @@ if (details != null){
 		<br /> <br />
 		Departure From: 
 		<br />
-		<input type = "radio" name = "dAirport" value = EWR size = 1/> Newark Liberty International Airport <br />
-		<input type = "radio" name = "dAirport" value = LGA size = 1/> LaGuardia Airport <br />
-		<input type = "radio" name = "dAirport" value = JFK size = 1/> John F. Kennedy International Airport <br />
-		<input type = "radio" name = "dAirport" value = HKG size = 1/> Hong Kong International Airport <br />
-		<input type = "radio" name = "dAirport" value = LAX size = 1/> Los Angeles Internaional Airport <br />
+		<input type = "radio" name = "dAirport" value = AFA size = 1/> Africa Airport <br />
+		<input type = "radio" name = "dAirport" value = ASA size = 1/> Asia Airport <br />
+		<input type = "radio" name = "dAirport" value = EUA size = 1/> Europe Airport <br />
+		<input type = "radio" name = "dAirport" value = NAA size = 1/> North America Airport <br />
+		<input type = "radio" name = "dAirport" value = SAA size = 1/> South America Airport <br />
 		<br /> <br /> 
 		Arrival From: 
 		<br />
-		<input type = "radio" name = "aAirport" value = EWR size = 1/> Newark Liberty International Airport <br />
-		<input type = "radio" name = "aAirport" value = LGA size = 1/> LaGuardia Airport <br />
-		<input type = "radio" name = "aAirport" value = JFK size = 1/> John F. Kennedy International Airport <br />
-		<input type = "radio" name = "aAirport" value = HKG size = 1/> Hong Kong International Airport <br />
-		<input type = "radio" name = "aAirport" value = LAX size = 1/> Los Angeles Internaional Airport <br />
+		<input type = "radio" name = "aAirport" value = AFA size = 1/> Africa Airport <br />
+		<input type = "radio" name = "aAirport" value = ASA size = 1/> Asia Airport <br />
+		<input type = "radio" name = "aAirport" value = EUA size = 1/> Europe Airport <br />
+		<input type = "radio" name = "aAirport" value = NAA size = 1/> North America Airport <br />
+		<input type = "radio" name = "aAirport" value = SAA size = 1/> South America Airport <br />
 		<br />
 	
 		<!--  drop box for possible departure date -->
