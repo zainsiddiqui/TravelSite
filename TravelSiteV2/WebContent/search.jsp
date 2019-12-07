@@ -38,48 +38,34 @@ if (details != null){
 
 <form method="post" action="postSearch1.jsp">
 		
-		<h1>Flight Details:</h1>
-		<!--  drop box for round trip or one way -->
-		<select name="tripType" size=1>
-			<option value="1">One Way</option>
-			<option value="0">Round Trip</option>
-		</select>&nbsp;
-		<br>
+		<h1> Flight Details: </h1>
+		Flight type: 
+		<br />
+		<input type = "radio" name = "tripType"  value = 1 /> One-Way  <br />
+		<input type = "radio" name = "tripType" value = 0/> RoundTrip <br />
 		
-		<!--  drop box for economy classes -->
-		<select name="classE" size=1>
-			<option value="E">Economy</option>
-			<option value="B">Business</option>
-			<option value="F">First</option>
-		</select>&nbsp;
-		<br>
-		
-		<!--  drop box for possible from airports -->
-		Departure Airport: 
-		<!--  drop box for round trip or one way -->
-		<select name="dAirport" size=1>
-			<option value="JFK">NY John F. Kennedy Airport</option>
-			<option value="LAX">Los Angeles International Airport </option>
-			<option value="DFW">Dallas/Fort Worth International Airport</option>
-			<option value="LHR">London Heathrow Airport</option>
-			<option value="DXB">Dubai International Airport</option>
-			<option value="HKG">Hong Kong International Airport</option>
-		</select>&nbsp;
-		<br>
-		
-		<!--  drop box for possible to airports -->
-		Arrival Airport:
-		<select name="aAirport" size=1>
-			<option value="JFK">NY John F. Kennedy Airport</option>
-			<option value="LAX">Los Angeles International Airport </option>
-			<option value="DFW">Dallas/Fort Worth International Airport</option>
-			<option value="LHR">London Heathrow Airport</option>
-			<option value="DXB">Dubai International Airport</option>
-			<option value="HKG">Hong Kong International Airport</option>
-		</select>&nbsp;
-		<br>
-		<br>
-		
+		Class:
+		<input type = "radio" name = "classE"  value = econ /> Economy 
+		<input type = "radio" name = "classE"  value = first /> First
+		<input type = "radio" name = "classE"  value = bus /> Business
+		<br /> <br />
+		Departure From: 
+		<br />
+		<input type = "radio" name = "dAirport" value = EWR size = 1/> Newark Liberty International Airport <br />
+		<input type = "radio" name = "dAirport" value = LGA size = 1/> LaGuardia Airport <br />
+		<input type = "radio" name = "dAirport" value = JFK size = 1/> John F. Kennedy International Airport <br />
+		<input type = "radio" name = "dAirport" value = HKG size = 1/> Hong Kong International Airport <br />
+		<input type = "radio" name = "dAirport" value = LAX size = 1/> Los Angeles Internaional Airport <br />
+		<br /> <br /> 
+		Arrival From: 
+		<br />
+		<input type = "radio" name = "aAirport" value = EWR size = 1/> Newark Liberty International Airport <br />
+		<input type = "radio" name = "aAirport" value = LGA size = 1/> LaGuardia Airport <br />
+		<input type = "radio" name = "aAirport" value = JFK size = 1/> John F. Kennedy International Airport <br />
+		<input type = "radio" name = "aAirport" value = HKG size = 1/> Hong Kong International Airport <br />
+		<input type = "radio" name = "aAirport" value = LAX size = 1/> Los Angeles Internaional Airport <br />
+		<br />
+	
 		<!--  drop box for possible departure date -->
 		<div class="form-group ">
 		Departure Date: <input class="form-control" id="date" name="dDate" placeholder="MM/DD/YYYY" type="text"/>
@@ -94,11 +80,11 @@ if (details != null){
 		<br>
 		
 		Flexibility:  
-		<input type="radio" name="flex" value="1"/> Yes!
-		<input type="radio" name="flex" value="0"/> No!
+		<input type="radio" name="flex" value="1"/> Yes
+		<input type="radio" name="flex" value="0"/> No
 		<br>
 		
-		<h1>Sort By:</h1>
+		Sort By:
 		<select name="sort" size=1>
 			<option value="Price">Price</option>
 			<option value="departureDateTime">Departure Time</option>
@@ -106,44 +92,27 @@ if (details != null){
 		</select>&nbsp;
 		<br>
 		
-		<h1>Filter By:</h1>
+		Filter By:
 		Budget:  <input type="text" name="budget" placeholder="0.00">
 		<br>
 		
 		Airlines: 
-		<input type="checkbox" name="airlines" value="AA" checked>American Airlines<br>
-		<input type="checkbox" name="airlines" value="UA" checked>United Airlines<br>
-		<input type="checkbox" name="airlines" value="BA" checked>British Airlines<br>
-		<input type="checkbox" name="airlines" value="EK" checked>Emirates<br>
-		<input type="checkbox" name="airlines" value="CA" checked>Air China<br>
+		<br />
+		<input type="checkbox" name="airlines" value="AA" >American Airlines<br>
+		<input type="checkbox" name="airlines" value="UA" >United Airlines<br>
+		<input type="checkbox" name="airlines" value="BA" >British Airlines<br>
+		<input type="checkbox" name="airlines" value="EK" >Emirates<br>
+		<input type="checkbox" name="airlines" value="CA" >Air China<br>
 		
 		<br>
-		
-		Number of Stops:
-		<input type="radio" name="stops" value="0" checked/> Nonstop
-		<input type="radio" name="stops" value="1"/> Stops Okay
+		Stops?
+		<input type="radio" name="stops" value="0" /> Non-stop
+		<input type="radio" name="stops" value="1"/> With-Stops
 		<br>
-
 		<br>
 		<br>
 		
-		<input type="submit" value="Row!">
+		<input type="submit" value="Submit">
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
