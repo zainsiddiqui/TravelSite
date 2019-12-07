@@ -21,3 +21,8 @@
 /FlightsAdd.class
 /FlightsEdit.class
 /FlightsDelete.class
+/BuyFlight.class
+/CancelFlight.class
+/ChangeFlight.class
+/joinWaitlist.class
+/JoinWaitlist.class
