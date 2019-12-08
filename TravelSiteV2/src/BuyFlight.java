@@ -29,14 +29,12 @@ public class BuyFlight extends HttpServlet {
      */
     public BuyFlight() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -44,7 +42,6 @@ public class BuyFlight extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 		ArrayList<SearchResult> results = (ArrayList<SearchResult>) request.getSession().getAttribute("FlightSearchResults");
 		int index = Integer.parseInt(request.getParameter("index"));
@@ -107,7 +104,7 @@ public class BuyFlight extends HttpServlet {
 				stmt4.setInt(3, count);
 				count++;
 				stmt4.setInt(4, (int)(Math.random()*900+100));
-				//SET SEAT!!!!
+				//Generating Seat Information
 				stmt4.executeUpdate();
 				stmt4.close();
 				
@@ -120,7 +117,7 @@ public class BuyFlight extends HttpServlet {
 						stmt5.setInt(2, tN);
 						stmt5.setInt(3, count);
 						count++;
-						//SET SEAT!!!!
+						//Generating Seat Information
 						stmt5.setInt(4, (int)(Math.random()*900+100));
 						stmt5.executeUpdate();
 						stmt5.close();
@@ -131,7 +128,7 @@ public class BuyFlight extends HttpServlet {
 					stmt6.setInt(2, tN);
 					stmt6.setInt(3, count);
 					count++;
-					//SET SEAT!!!!
+					//Generating Seat Information
 					stmt6.setInt(4, (int)(Math.random()*900+100));
 					stmt6.executeUpdate();
 					stmt6.close();
@@ -142,7 +139,6 @@ public class BuyFlight extends HttpServlet {
 				response.sendRedirect("ticketHistory.jsp?buy=true");
 				
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			

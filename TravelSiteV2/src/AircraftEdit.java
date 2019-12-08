@@ -23,14 +23,12 @@ public class AircraftEdit extends HttpServlet {
      */
     public AircraftEdit() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -38,7 +36,6 @@ public class AircraftEdit extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 		String PREV_ID = request.getParameter("AircraftID");
 		String AirlineEdit = request.getParameter("AirlinesOwnerEdit");
@@ -55,7 +52,6 @@ public class AircraftEdit extends HttpServlet {
 			UPDATE2.executeUpdate("UPDATE Owns SET OwnsAirlineID = (SELECT AirlineID FROM Airline WHERE AirlineID='"+AirlineEdit+"'), OwnsAircraftId = (SELECT AircraftID FROM Aircrafts WHERE AircraftID='"+ID+"') WHERE OwnsAircraftID='"+ID+"'");
 			con.close();	
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -63,7 +59,6 @@ public class AircraftEdit extends HttpServlet {
 		
 		
 		
-		//response.sendRedirect("login.jsp");
 		response.sendRedirect("EmployeeHome.jsp?account=on");
 	}
 

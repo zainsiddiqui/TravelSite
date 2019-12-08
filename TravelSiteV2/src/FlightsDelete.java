@@ -22,7 +22,6 @@ public class FlightsDelete extends HttpServlet {
      */
     public FlightsDelete() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -43,17 +42,16 @@ public class FlightsDelete extends HttpServlet {
 		try {
 			ConnectDB db = new ConnectDB();
 			java.sql.Connection con = db.getConnection();
-			java.sql.Statement stmt1 = con.createStatement();
-			int rs = stmt1.executeUpdate("DELETE FROM Flights WHERE FlightNumber="+FlightNum+"");
+			java.sql.Statement s1 = con.createStatement();
+			s1.executeUpdate("DELETE FROM Flights WHERE FlightNumber="+FlightNum+"");
 			con.close();	
 		} 
 		catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
 		
-		//response.sendRedirect("login.jsp");
 		response.sendRedirect("EmployeeHome.jsp?account=on");
 	
 	}

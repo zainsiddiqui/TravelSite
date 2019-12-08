@@ -75,15 +75,7 @@ public class allQueries{
 		this.classE = classE;
 		this.priceType+=classE;
 		this.orderBy = oB;
-				//2 FlyFromAirport
-				//3 dDate
-				//4 dDate2
-				//5 FlyToAirport
-					//9 FlyFromAirport
-					//10 dDate
-					//11 dDate2
-					//12 FlyToAirport
-				//13 FlyToAirport
+				
 		
 	}
 	

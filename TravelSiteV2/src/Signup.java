@@ -25,14 +25,12 @@ private static final long serialVersionUID = 1L;
      */
     public Signup() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 /**
 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 */
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-// TODO Auto-generated method stub
 response.getWriter().append("Served at: ").append(request.getContextPath());
 }
 
@@ -40,7 +38,6 @@ response.getWriter().append("Served at: ").append(request.getContextPath());
 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 */
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-// TODO Auto-generated method stub
 doGet(request, response);
 String firstName = request.getParameter("firstName");
 String lastName = request.getParameter("lastName");
@@ -70,10 +67,10 @@ ResultSet rs1 = stmt1.executeQuery();
 
 
 if (rs.next()) {
-//check if email exists
+//checking if email is valid
 response.sendRedirect("signup.jsp?faults=email");
 } else if (rs1.next()) {
-//check if username exists
+//checking if username is valid
 response.sendRedirect("signup.jsp?faults=username");
 } else {
 qry = "insert into Account values (?,?,?,?,?)";

@@ -25,14 +25,12 @@ public class ChangeFlight extends HttpServlet {
      */
     public ChangeFlight() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -40,7 +38,6 @@ public class ChangeFlight extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 		int tN = Integer.parseInt( request.getParameter("TicketNumber"));
 		String Class = request.getParameter("Class");
@@ -94,22 +91,12 @@ public class ChangeFlight extends HttpServlet {
 			stmt.executeUpdate();
 			stmt.close();
 			
-			/*
-			String qry1 = "update FlightSequences set Seat=? where FSTicketNumber=? and FSFlightNumber=?";
-			PreparedStatement stmt1 = conn.prepareStatement(qry1);
-			stmt1.setInt(1, seat);
-			stmt1.setInt(2,tN);
-			stmt1.setInt(3,FlightNumber);
-			stmt1.executeUpdate();
-			stmt1.close();
-			*/
 			
 			String qry2 = "update Buys set Class=? where BuysTicketNumber=? and BuysUsername=?";
 			PreparedStatement stmt2 = conn.prepareStatement(qry2);
 			stmt2.setString(1,Class);
 			stmt2.setInt(2,tN);
 			stmt2.setString(3,Username);
-			//stmt.setString(2,Class);
 			stmt2.executeUpdate();
 			stmt2.close();
 			

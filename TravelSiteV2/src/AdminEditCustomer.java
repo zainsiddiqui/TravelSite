@@ -21,14 +21,12 @@ public class AdminEditCustomer extends HttpServlet {
      */
     public AdminEditCustomer() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -36,7 +34,6 @@ public class AdminEditCustomer extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 
 		String oldUsername = request.getParameter("oldUsername");
@@ -44,7 +41,6 @@ public class AdminEditCustomer extends HttpServlet {
 		String newPassword = request.getParameter("newPassword");
 		String newEmail = request.getParameter("newEmail");
 		String newName = request.getParameter("newName");
-		//String qryResult="";
 		
 		int hi=0;
 		try {
@@ -56,7 +52,6 @@ public class AdminEditCustomer extends HttpServlet {
 			
 			String str = "update Account set Username = ?,Password = ?,Email = ?,Name = ? where Username = ?";
 			PreparedStatement stmt = con.prepareStatement(str);
-			//stmt.setString(1,newUsername);
 			if(newUsername.isEmpty())
 				stmt.setNull(1,java.sql.Types.VARCHAR);
 			else
@@ -75,7 +70,6 @@ public class AdminEditCustomer extends HttpServlet {
 				stmt.setString(4,newName);
 
 			stmt.setString(5,oldUsername);
-			//qryResult = stmt.toString();
 			hi = stmt.executeUpdate();
 			
 			stmt.close();
