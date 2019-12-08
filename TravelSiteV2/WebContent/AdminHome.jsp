@@ -53,8 +53,6 @@ Flight or Customer:<select name="AdminReservation">
   <option value="2">Customer</option>
   </select>
 <pre>
-
-<br>
 Enter customer username or Flight Number: <input type="text" name="name">
 <input type="submit" value="Submit">
 </pre>
@@ -68,7 +66,6 @@ Flight, Customer, or Airline?
     <option value="Customer">Customer</option>
     <option value="Airline">Airline</option>
   </select>
- <br>
 <pre>
 Enter customer username, flight number, or airline id: <input type="text" name="name">
 </pre>
