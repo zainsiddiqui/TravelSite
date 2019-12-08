@@ -37,7 +37,7 @@ Customer Username: <input type="text" name="searchCustomer">
 <input type="submit" value="Submit">
 </pre>
 </form>
-
+<br>
 SEE SALES REPORT
 <form action="AdminCheckSales.jsp" method="post">
 <pre>
@@ -45,7 +45,7 @@ SEE SALES REPORT
 Enter YYYY/MM: <input type="submit" value="Submit">
 </pre>
 </form>
-
+<br>
 SEE RESERVATIONS
 <form action="AdminReservation.jsp">
 Flight or Customer:<select name="AdminReservation">
@@ -53,6 +53,8 @@ Flight or Customer:<select name="AdminReservation">
   <option value="2">Customer</option>
   </select>
 <pre>
+
+<br>
 Enter customer username or Flight Number: <input type="text" name="name">
 <input type="submit" value="Submit">
 </pre>
@@ -96,7 +98,13 @@ SEE 3 MOST ACTIVE FLIGHTS
 SEE ALL FLIGHTS AT AIRPORT
 <form action="AdminCheckFlightsAtAirport.jsp" method="post">
 <pre>
-AIRPORT ID: <input type="text" name="airport">
+AIRPORT ID:
+<input type="radio" name="airport" value="AFA"/> Africa Airport
+<input type="radio" name="airport" value="ASA"/> Asia Airport
+<input type="radio" name="airport" value="EUA"/> Europe Airport
+<input type="radio" name="airport" value="NAA"/> North America Airport
+<input type="radio" name="airport" value="SAA"/> South America Airport
+
 <input type="submit" value="View">
 </pre>
 </form>
