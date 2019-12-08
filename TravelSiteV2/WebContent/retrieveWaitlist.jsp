@@ -13,7 +13,7 @@ Flight Number <input type = "text" name ="FlightNumberInsert" >
 </form>
 
 </head>
-<body>
+<body style = "background-color:azure">
 
 </body>
 </html>

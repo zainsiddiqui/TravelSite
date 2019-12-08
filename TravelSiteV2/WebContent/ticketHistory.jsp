@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Ticket History</title>
 </head>
-<body>
+<body style = "background-color:azure">
 
 <%
 

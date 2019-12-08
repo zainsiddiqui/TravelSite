@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Signup</title>
 </head>
-<body>
+<body style = "background-color:azure">
 <%
 String details = request.getParameter("faults");
 if (details!= null){

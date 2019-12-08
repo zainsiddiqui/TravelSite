@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Customers on Waitlist</title>
 </head>
-<body>
+<body style = "background-color:azure">
 <%
 
 try {

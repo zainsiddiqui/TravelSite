@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Login</title>
 </head>
-<body>
+<body style = "background-color:azure">
 
 <%
 String details = request.getParameter("login");

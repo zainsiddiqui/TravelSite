@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body style = "background-color:azure">
 <%
 String details = request.getParameter("account");
 if (details == null || details.equals("off")){

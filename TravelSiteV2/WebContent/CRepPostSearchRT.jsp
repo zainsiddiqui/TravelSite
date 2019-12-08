@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Arrival Results</title>
 </head>
-<body>
+<body style = "background-color:azure">
 
 
 <%

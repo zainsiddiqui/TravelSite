@@ -9,7 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>ActiveFlights</title>
 </head>
-<body>
+<body style = "background-color:azure">
 
 <%
 		try {

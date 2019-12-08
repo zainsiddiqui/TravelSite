@@ -9,7 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Reservation</title>
 </head>
-<body>
+<body style = "background-color:azure">
 <%
 String Res = request.getParameter("AdminReservation");
 String cust="";

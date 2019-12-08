@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Flights</title>
 </head>
-<body>
+<body style = "background-color:azure">
 <pre>
 <h2>Add a Flight</h2>
 <form action = "FlightsAdd" method = "post">

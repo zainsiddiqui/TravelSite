@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Search</title>
 </head>
-<body>
+<body style = "background-color:azure">
 
 
 <br>

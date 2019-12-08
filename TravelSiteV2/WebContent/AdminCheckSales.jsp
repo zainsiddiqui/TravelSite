@@ -12,7 +12,7 @@
 <meta charset="ISO-8859-1">
 <title>Sales</title>
 </head>
-<body>
+<body style = "background-color:azure">
 <%
 List<String> list = new ArrayList<String>();
 String date = request.getParameter("date");

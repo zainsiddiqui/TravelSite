@@ -6,7 +6,7 @@
 <meta>
 <title>Edit Flight</title>
 </head>
-<body>
+<body style = "background-color:azure">
 
 <pre>
 <form action="ChangeFlight" method="post">
