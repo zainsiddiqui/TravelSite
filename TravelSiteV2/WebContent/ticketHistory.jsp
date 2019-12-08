@@ -6,10 +6,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel = "stylesheet" href = "style.css">
+<style>
+body {
+	background-color: azure;
+}
+table {
+	border: 1px solid black;
+}
+td {
+	padding: 10px;
+}
+
+</style>
+
 <meta charset="UTF-8">
 <title>Ticket History</title>
 </head>
-<body style = "background-color:azure">
+<body">
 
 <%
 
