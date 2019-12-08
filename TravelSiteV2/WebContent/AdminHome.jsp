@@ -41,8 +41,8 @@ Customer Username: <input type="text" name="searchCustomer">
 SEE SALES REPORT
 <form action="AdminCheckSales.jsp" method="post">
 <pre>
-<input type="text" name="date">
-Enter YYYY/MM: <input type="submit" value="Submit">
+Enter YYYY/MM: <input type="text" name="date">
+<input type="submit" value="Submit">
 </pre>
 </form>
 <br>
