@@ -30,7 +30,7 @@ if (details!= null){
 
 %>
 <br>
-SEARCH, EDIT, DELETE USER INFORMATION
+<h2>SEARCH, EDIT, DELETE USER INFORMATION<h2/>
 <form action="AdminSearchCustomer.jsp" method="post">
 <pre>
 Customer Username: <input type="text" name="searchCustomer">
