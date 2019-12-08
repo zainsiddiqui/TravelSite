@@ -10,64 +10,13 @@ import java.time.*;
 import java.sql.*;
 
 public class allQueries{
-	/*
+	
 	private String priceType = "Price";
-	private String directCheck= "and FlyToAirportID =? ";
-	private String nested = "and FlyToAirportID <>? ";
-	private String union = "UNION ALL ";
-	private String crossJoin = "CROSS JOIN ";
+	
+	
 	private String orderBy;
 	private String order = "ORDER BY ";
-	private String directOneWay = "select OperatedByAirlineID, FlyFromFlightNumber as layoverFlightNumber, FlyFromAirportID as departureAirport, "
-			+"Departure as departureDateTime, FlyToAirportID as layoverAirport, Arrival as layoverArrival, "
-			+"PriceE as layoverPrice, Capacity as layoverCapacity, "
-			+"NULL as arrivalFlightNumber, NULL as arrivalAirport, null as layoverDeparture, null as arrivalDateTime, null as arrivalPrice, null as arrivalCapacity "
-			+"from FlyFrom join FlyTo on FlyFromFlightNumber=FlyToFlightNumber "
-			+"join OperatedBy on FlyFromFlightNumber=OperatedByFlightNumber "
-			+"join Flights on FlyFromFlightNumber=FlightNumber "
-			+"join Have on FlyFromFlightNumber=HaveFlightNumber "
-			+"join Aircrafts on HaveAircraftID = AircraftID "
-			+"where FlyFromAirportID =? "
-			+"and DATE(Departure) >=? and DATE(Departure) <=? ";	
-	private String stopsOneWay = "("+directOneWay+directCheck+")"+union
-				+"(select b.OperatedByAirlineID, t.layoverFlightNumber, t.departureAirport, t.departureDateTime, t.layoverAirport, t.layoverArrival, t.layoverPrice, t.layoverCapacity, "
-				+"o.FlyToFlightNumber, o.FlyToAirportID, m.Departure, o.Arrival, f.PriceE, a.Capacity "
-				+"from FlyFrom m "
-				+"join OperatedBy b on m.FlyFromFlightNumber = b.OperatedByFlightNumber "
-				+"join FlyTo o on o.FlyToFlightNumber = m.FlyFromFlightNumber "
-				+"join Flights f on FlyFromFlightNumber=FlightNumber "
-				+"join Have on FlyFromFlightNumber=HaveFlightNumber "
-				+"join Aircrafts a on HaveAircraftID = AircraftID "
-				+"join ("
-						+directOneWay+nested
-						+") t on t.layoverAirport=m.FlyFromAirportID and b.OperatedByAirlineID = t.OperatedByAirlineID "
-				+"where m.Departure >= t.layoverArrival "
-				+"and m.Departure <= date_add(t.layoverArrival, INTERVAL 1 day) "
-				+"and o.FlyToAirportID = ?) ";
-	private String directRound = "select OperatedByAirlineID as oAID1, FlyFromFlightNumber as layoverFlightNumber1, FlyFromAirportID as departureAirport1, Departure as departureDateTime1, FlyToAirportID as layoverAirport1, Arrival as layoverArrival1, PriceE as layoverPrice1, Capacity as layoverCapacity1, "				+"NULL as arrivalFlightNumber1, NULL as arrivalAirport1, null as layoverDeparture1, null as arrivalDateTime1, null as arrivalPrice1, null as arrivalCapacity1 "
-				+"from FlyFrom join FlyTo on FlyFromFlightNumber=FlyToFlightNumber "
-				+"join OperatedBy on FlyFromFlightNumber=OperatedByFlightNumber "
-				+"join Flights on FlyFromFlightNumber=FlightNumber "
-				+"join Have on FlyFromFlightNumber=HaveFlightNumber "
-				+"join Aircrafts on HaveAircraftID = AircraftID "
-				+"where FlyFromAirportID =? "
-				+"and DATE(Departure) >=? and DATE(Departure) <=? ";
-	private String stopsRound = "("+directRound+directCheck+")"+union
-				+"(select b.OperatedByAirlineID, t.layoverFlightNumber1, t.departureAirport1, t.departureDateTime1, t.layoverAirport1, t.layoverArrival1, t.layoverPrice1, t.layoverCapacity1, "
-				+"o.FlyToFlightNumber, o.FlyToAirportID, m.Departure, o.Arrival, f.PriceE, a.Capacity "
-				+"from FlyFrom m "
-				+"join OperatedBy b on m.FlyFromFlightNumber = b.OperatedByFlightNumber "
-				+"join FlyTo o on o.FlyToFlightNumber = m.FlyFromFlightNumber "
-				+"join Flights f on FlyFromFlightNumber=FlightNumber "
-				+"join Have on FlyFromFlightNumber=HaveFlightNumber "
-				+"join Aircrafts a on HaveAircraftID = AircraftID "
-				+"join ("
-						+directRound+nested
-						+") t on t.layoverAirport1=m.FlyFromAirportID and b.OperatedByAirlineID = t.oAID1 "
-				+"where m.Departure >= t.layoverArrival1 "
-				+"and m.Departure <= date_add(t.layoverArrival1, INTERVAL 1 day) "
-				+"and o.FlyToAirportID = ?) ";	
-	*/
+	
 	private String checkCapacity =  "select count(FSFlightNumber) "
 			+"from FlightSequences "
 			+"where FSFlightNumber=?";
