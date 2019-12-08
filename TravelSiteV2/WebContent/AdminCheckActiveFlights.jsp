@@ -8,6 +8,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>ActiveFlights</title>
+<style>
+
+	table, td, th {
+		border: 2px solid black;
+		padding: 5px;
+		align: middle;
+	}
+	
+	table{
+		border-collapse: separate;
+		text-align: center;
+		align: middle;
+		margin-left: auto;
+		margin-right: auto;
+	}
+		
+	pre{
+		text-align: center;
+		
+	}
+</style>
+
+
 </head>
 <body style = "background-color:azure">
 
@@ -27,11 +50,11 @@
 			//make a row
 			out.print("<tr>");
 			//make a column
-			out.print("<td>");
+			out.print("<td style= 'font-size:large; text-decoration: underline'>");
 			//print out column header
 			out.print("Flight Number");
 			out.print("</td>");
-			out.print("<td>");
+			out.print("<td style= 'font-size:large; text-decoration: underline'>");
 			//print out column header
 			out.print("Tickets Sold");
 			out.print("</td>");

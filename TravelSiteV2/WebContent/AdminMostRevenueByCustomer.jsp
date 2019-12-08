@@ -7,9 +7,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Most Revenue By Customer</title>
+
+<style>
+	body{
+		background-color: azure;
+	}
+</style>
 </head>
-<body style = "background-color:azure">
+<body>
 <%
 			String qry,maxCust="";
 			Float maxMun=(float)0;
