@@ -11,7 +11,7 @@ body{
 	background-size: cover;
 	text-align: center;
 	background-color: azure;
-	font-size:	20px;
+	font-size:	24px;
 	color: black;
 	font-family: arial;
 	
