@@ -7,6 +7,45 @@
 <title>Search</title>
 </head>
 <body style = "background-color:azure">
+<style>
+h1 {
+text-align: center;
+}
+label {
+color: black;
+font-weight: bold;
+display: block;
+width: 150px;
+float: left;
+}
+input[type=radio] {
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:15px;
+    -webkit-appearance:button;
+    border: double 2px #00F;
+    background-color:white;
+    color:#FFF;
+    white-space: nowrap;
+    overflow:hidden;
+    width:15px;
+    height:15px;
+}
+input[type=radio]:checked {
+    background-color:#000;
+}
+input[type = submit] {
+  background-color: #4CAF50; 
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+</style>
+
 <%
 String link = "signout.jsp";
 out.println("<a href ="+link+">Signout</a>");
@@ -39,17 +78,18 @@ if (details != null){
 <form method="post" action="postSearch1.jsp">
 		
 		<h1> Flight Details: </h1>
-		Flight type: 
+		<label> Flight type: </label>
 		<br />
 		<input type = "radio" name = "tripType"  value = 1 /> One-Way  <br />
 		<input type = "radio" name = "tripType" value = 0/> RoundTrip <br />
 		
-		Class:
+		<label> Class: </label>
+		<br />
 		<input type = "radio" name = "classE"  value = econ /> Economy 
 		<input type = "radio" name = "classE"  value = first /> First
 		<input type = "radio" name = "classE"  value = bus /> Business
 		<br /> <br />
-		Departure From: 
+		<label> Departure From: </label>
 		<br />
 		<input type = "radio" name = "dAirport" value = AFA size = 1/> Africa Airport <br />
 		<input type = "radio" name = "dAirport" value = ASA size = 1/> Asia Airport <br />
@@ -57,7 +97,7 @@ if (details != null){
 		<input type = "radio" name = "dAirport" value = NAA size = 1/> North America Airport <br />
 		<input type = "radio" name = "dAirport" value = SAA size = 1/> South America Airport <br />
 		<br /> <br /> 
-		Arrival From: 
+		<label> Arrival From: </label>
 		<br />
 		<input type = "radio" name = "aAirport" value = AFA size = 1/> Africa Airport <br />
 		<input type = "radio" name = "aAirport" value = ASA size = 1/> Asia Airport <br />
@@ -66,37 +106,36 @@ if (details != null){
 		<input type = "radio" name = "aAirport" value = SAA size = 1/> South America Airport <br />
 		<br />
 	
-		<!--  drop box for possible departure date -->
 		<div class="form-group ">
-		Departure Date: <input class="form-control" id="date" name="dDate" placeholder="MM/DD/YYYY" type="text"/>
+		<label> Departure Date: </label> <input class="form-control" id="date" name="dDate" placeholder="MM/DD/YYYY" type="text"/>
 		</div>
 		<br>
 		
-		<!--  drop box for possible arrival date -->
 		<div class="form-group ">
-		Arrival Date: <input class="form-control" id="date" name="aDate" placeholder="MM/DD/YYYY" type="text"/>
+		<label> Arrival Date: </label> <input class="form-control" id="date" name="aDate" placeholder="MM/DD/YYYY" type="text"/>
 		
 		</div>
 		<br>
 		
-		Flexibility:  
+		<label> Flexibility:  </label>
 		<input type="radio" name="flex" value="1"/> Yes
 		<input type="radio" name="flex" value="0"/> No
 		<br>
 		
-		Sort By:
+		<label> Sort By: </label>
 		<select name="sort" size=1>
 			<option value="Price">Price</option>
 			<option value="departureDateTime">Departure Time</option>
 			<option value="arrivalDateTime">Arrival Time</option>
 		</select>&nbsp;
 		<br>
-		
-		Filter By:
-		Budget:  <input type="text" name="budget" placeholder="0.00">
+		<br />
+		<label> Filter By: </label>
+		<br /> <br />
+		<label> Budget: </label> <input type="text" name="budget" placeholder="0.00">
 		<br>
-		
-		Airlines: 
+		<br />
+		<label> Airlines: </label>
 		<br />
 		<input type="checkbox" name="airlines" value="AA" >American Airlines<br>
 		<input type="checkbox" name="airlines" value="UA" >United Airlines<br>
@@ -105,7 +144,7 @@ if (details != null){
 		<input type="checkbox" name="airlines" value="CA" >Air China<br>
 		
 		<br>
-		Stops?
+		<label> Stops? </label>
 		<input type="radio" name="stops" value="0" /> Non-stop
 		<input type="radio" name="stops" value="1"/> With-Stops
 		<br>
