@@ -25,20 +25,20 @@ out.println("<br>");
 String details = request.getParameter("success");
 if (details != null){
 	if (details.equals("true")){
-		out.print("Successfully Cancelled Flight");
+		out.print("<h2>Successfully Cancelled Flight!</h2>");
 	}
 }
 details = request.getParameter("buy");
 if (details != null){
 	if (details.equals("true")){
-		out.print("Successfully Bought Flight");
+		out.print("<h2>Successfully Bought Flight!</h2>");
 	}
 }
 
 details = request.getParameter("waitlist");
 if (details != null){
 	if (details.equals("true")){
-		out.print("Successfully Waitlisted Flight");
+		out.print("<h2>Successfully Waitlisted Flight!</h2>");
 	}
 }
 
