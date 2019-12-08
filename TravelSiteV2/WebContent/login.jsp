@@ -38,6 +38,12 @@
 		color: hotpink;
 	}
 	
+	p{
+		color: red;
+		font-size: large;
+		font-weight: bold;
+	}
+	
 </style>
 </head>
 
@@ -46,12 +52,13 @@
 <%
 String link1 = "home.jsp";
 out.println("<a href ="+link1+">Back to Home</a>");
+
 String details = request.getParameter("login");
 if (details!= null){
 	if (details.equals("fail")){
-		out.println("<p><b>Error: Wrong username or password. Please try again</b></p>");
+		out.println("<p><b>Error: Wrong username or password! Please try again!</b></p>");
 	}else if (details.equals("empty")){
-		out.println("<p><b>Please complete all fields.</b></p>");
+		out.println("<p><b>Please complete all fields!</b></p>");
 	}
 }
 %>

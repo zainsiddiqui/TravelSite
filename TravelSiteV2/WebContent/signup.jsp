@@ -35,6 +35,12 @@
 	a:hover{
 		color: hotpink;
 	}
+	
+	p{
+		color: red;
+		font-size: large;
+		font-weight: bold;
+	}
 </style>
 </head>
 <body>
@@ -45,11 +51,11 @@ out.println("<a href ="+link2+">Back to Home</a>");
 String details = request.getParameter("faults");
 if (details!= null){
 if (details.equals("empty")){
-out.println("<p>Please fill out every field.</p>");
+out.println("<p>Please fill out every field!</p>");
 } else if (details.equals("email")) {
-out.println("<p>Account with this email already exists.</p>");
+out.println("<p>Account with this email already exists!</p>");
 } else if (details.equals("username")) {
-out.println("<p>Username already exists. Please choose another one.</p>");
+out.println("<p>Username already exists. Please choose another one!</p>");
 }
 }
 %>
