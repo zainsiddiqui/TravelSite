@@ -48,7 +48,7 @@ out.println("<p>Registered New Customer Rep</p>");
 String link1 = "AdminHome.jsp";
 out.println("<a href ="+link1+">AdminHome</a>");
 } else {
-out.println("<p>Welcome Customer Rep: "+name+"</p>");
+out.println("<h1><p>Welcome Customer Rep: "+name+"</p></h1>");
 String link1 = "Airports.jsp";
 out.println("<a href="+link1+" >Airports</a>");
 out.println("<br>");

@@ -28,14 +28,12 @@ public class FlightsEdit extends HttpServlet {
      */
     public FlightsEdit() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -43,9 +41,8 @@ public class FlightsEdit extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
-int OGFlightNum = Integer.parseInt(request.getParameter("OriginalFlightNumberEdit"));
+		int OGFlightNum = Integer.parseInt(request.getParameter("OriginalFlightNumberEdit"));
 		
 		int FlightNum = Integer.parseInt(request.getParameter("FlightNumberEdit"));
 		String Days = request.getParameter("DaysOfOperationEdit");
@@ -53,10 +50,6 @@ int OGFlightNum = Integer.parseInt(request.getParameter("OriginalFlightNumberEdi
 		String DirectIndirect = request.getParameter("Direct/IndirectEdit");
 		String DomesticInternational = request.getParameter("Domestic/InternationalEdit");
 		
-//		String arrivaltime = request.getParameter("ArrivalTimeEdit");
-//		String arrivaldate = request.getParameter("ArrivalDateEdit");
-//		String departuretime = request.getParameter("DepartureTimeEdit");
-//		String departuredate = request.getParameter("DepartureDateEdit");
 		String arrivalAirport = request.getParameter("ArrivalAirportEdit");
 		String departureAirport = request.getParameter("DepartureAirportEdit");
 		String AirlineID = request.getParameter("AirlineIdEdit");
@@ -68,31 +61,6 @@ int OGFlightNum = Integer.parseInt(request.getParameter("OriginalFlightNumberEdi
 		String ArrivalDateTime = request.getParameter("ArrivalDateTimeEdit");
 		String DepartureDateTime = request.getParameter("DepartureDateTimeEdit");
 		
-		//DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-		
-//		Time arrivalTime = null;
-//		arrivalTime = Time.valueOf(arrivaltime);
-//		Date arrivalDatejava = null;
-//		try {
-//			 arrivalDatejava = formatter.parse(arrivaldate);
-//		} catch (ParseException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//		java.sql.Date arrivalDate = new java.sql.Date(arrivalDatejava.getTime());
-//		
-//		Time arrivalTimeDep = null;
-//		arrivalTimeDep = Time.valueOf(departuretime);
-//		Date DepartureDatejava = null;
-//		
-//		try {
-//			 DepartureDatejava = formatter.parse(departuredate);
-//		} catch (ParseException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-		
-	//	java.sql.Date departureDate = new java.sql.Date(DepartureDatejava.getTime());
 		int DI;
 		if (DomesticInternational.equals("International")) {
 			DI = 1;
@@ -116,11 +84,8 @@ int OGFlightNum = Integer.parseInt(request.getParameter("OriginalFlightNumberEdi
 			con.close();	
 		}
 		catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//response.sendRedirect("login.jsp");
 		response.sendRedirect("EmployeeHome.jsp?account=on");
 	}
 
