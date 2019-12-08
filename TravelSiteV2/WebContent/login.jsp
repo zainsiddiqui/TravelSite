@@ -34,8 +34,7 @@
 		
 	}
 	
-	input [type=submit]{
-	}
+	
 </style>
 </head>
 

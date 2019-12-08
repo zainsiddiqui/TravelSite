@@ -32,11 +32,16 @@
 		background-color: whitesmoke;
 	}
 	
-	
+	a:hover{
+		color: hotpink;
+	}
 </style>
 </head>
 <body>
 <%
+String link1 = "home.jsp";
+out.println("<a href= "+link1+">Back to Home</a>");
+
 String details = request.getParameter("faults");
 if (details!= null){
 if (details.equals("empty")){
