@@ -4,10 +4,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Welcome to EZFlights!</title>
+<style>
+body{
+	text-align: center;
+	background-color: azure;
+	font-size:	20px;
+	color: cadetblue;
+	font-family: arial;
+}
+	
+</style>
 </head>
 <body>
+<h1> Welcome to EZFlights!</h1>
 <%
+
 String details = request.getParameter("account");
 if (details == null || details.equals("off")){
 String link = "login.jsp?login=true";
@@ -65,5 +77,6 @@ out.println("Sucessfully joined Waitlist.");
 }
 }
 %>
+
 </body>
 </html>
