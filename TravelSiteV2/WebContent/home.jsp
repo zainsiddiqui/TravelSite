@@ -8,7 +8,8 @@
 <style>
 body{
 	background-image: url("planegif.gif");
-	background-size: cover;
+	background-repeat: no-repeat;
+  	background-size: cover;
 	text-align: center;
 	background-color: azure;
 	font-size:	24px;
