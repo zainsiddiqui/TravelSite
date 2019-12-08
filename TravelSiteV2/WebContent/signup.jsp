@@ -5,8 +5,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Signup</title>
+<style>
+	body{
+		background-color: azure;
+		font-family: cambria;
+		text-align: center;
+		
+	}
+	pre{
+		font-size: large;
+		font-family: cambria;
+		text-decoration: underline;
+	
+		
+	}
+	
+	input[type=text]{
+		border: 2px solid lightblue;
+		border-radius: 4px;
+		background-color: whitesmoke;
+		
+	}
+	input[type=password]{
+		border: 2px solid lightblue;
+		border-radius: 4px;
+		background-color: whitesmoke;
+	}
+	
+	
+</style>
 </head>
-<body style = "background-color:azure">
+<body>
 <%
 String details = request.getParameter("faults");
 if (details!= null){
@@ -19,15 +48,24 @@ out.println("<p>Username already exists. Please choose another one.</p>");
 }
 }
 %>
-
-
+<h2> Enter User Information Below</h2>
 <form action="Signup" method="post">
 <pre>
-First Name: <input type="text" name="firstName">
-Last Name: <input type="text" name="lastName">
-Email: <input type="text" name="email">
-Username: <input type="text" name="username">
-Password: <input type="text" name="password">
+First Name
+<input type="text" name="firstName" placeholder= "i.e. John">
+
+Last Name
+<input type="text" name="lastName" placeholder = "i.e. Doe">
+
+Email
+<input type="text" name="email" placeholder = "i.e. johndoe@gmail.com">
+
+Username
+<input type="text" name="username" placeholder ="Enter Here">
+
+Password
+<input type="password" name="password" placeholder = "Enter Here">
+
 <input type="submit" value="Submit">
 </pre>
 </form>

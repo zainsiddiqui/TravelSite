@@ -26,6 +26,13 @@
 		text-align: center;
 		
 	}
+	input[type=password]{
+		border: 2px solid lightblue;
+		border-radius: 4px;
+		background-color: whitesmoke;
+		text-align: center;
+		
+	}
 	
 	input [type=submit]{
 	}
@@ -51,7 +58,7 @@ Username
 <input type="text" name="username" placeholder= "Enter Here">
 
 Password
-<input type="text" name="password" placeholder= "Enter Here">
+<input type="password" name="password" placeholder= "Enter Here">
 
 <input type="submit" value="Submit">
 </pre>
