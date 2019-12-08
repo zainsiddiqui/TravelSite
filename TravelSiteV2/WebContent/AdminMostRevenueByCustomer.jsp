@@ -12,6 +12,15 @@
 <style>
 	body{
 		background-color: azure;
+		text-align: center;
+		font-weight: bold;
+	}
+	table, td, th{
+		border-collapse: separate;
+		text-align: center;
+		align: middle;
+		margin-left: auto;
+		margin-right: auto;
 	}
 </style>
 </head>
@@ -45,7 +54,7 @@ try {
 			//make a column
 			out.print("<td>");
 			//print out column header
-			out.print(maxCust+ " has generated the most revenue");
+			out.print(maxCust+ " has generated the most revenue!");
 			out.print("</td>");
 			out.print("</tr>");
 			
@@ -53,7 +62,7 @@ try {
 			//make a column
 			out.print("<td>");
 			//print out column header
-			out.print(maxMun);
+			out.print("$"+maxMun);
 			out.print("</td>");
 			out.print("</tr>");
 
