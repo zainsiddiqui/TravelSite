@@ -34,6 +34,9 @@
 		
 	}
 	
+	a:hover{
+		color: hotpink;
+	}
 	
 </style>
 </head>
@@ -41,6 +44,8 @@
 <body>
 
 <%
+String link1 = "home.jsp";
+out.println("<a href ="+link1+">Back to Home</a>");
 String details = request.getParameter("login");
 if (details!= null){
 	if (details.equals("fail")){
@@ -62,6 +67,9 @@ Password
 <input type="submit" value="Submit">
 </pre>
 </form>
-
+<%
+String link2 = "signup.jsp";
+out.println("<a href= "+link2+">Don't Have An Account? Sign Up Here!</a>");
+%>
 </body>
 </html>

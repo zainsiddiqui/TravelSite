@@ -39,9 +39,9 @@
 </head>
 <body>
 <%
-String link1 = "home.jsp";
-out.println("<a href= "+link1+">Back to Home</a>");
 
+String link2 = "home.jsp";
+out.println("<a href ="+link2+">Back to Home</a>");
 String details = request.getParameter("faults");
 if (details!= null){
 if (details.equals("empty")){
@@ -74,7 +74,10 @@ Password
 <input type="submit" value="Submit">
 </pre>
 </form>
-
+<%
+String link1 = "login.jsp";
+out.println("<a href= "+link1+">Already Have An Account? Login Here</a>");
+%>
 
 </body>
 </html>
