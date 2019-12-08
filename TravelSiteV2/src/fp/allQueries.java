@@ -10,6 +10,7 @@ import java.time.*;
 import java.sql.*;
 
 public class allQueries{
+	/*
 	private String priceType = "Price";
 	private String directCheck= "and FlyToAirportID =? ";
 	private String nested = "and FlyToAirportID <>? ";
@@ -65,7 +66,8 @@ public class allQueries{
 						+") t on t.layoverAirport1=m.FlyFromAirportID and b.OperatedByAirlineID = t.oAID1 "
 				+"where m.Departure >= t.layoverArrival1 "
 				+"and m.Departure <= date_add(t.layoverArrival1, INTERVAL 1 day) "
-				+"and o.FlyToAirportID = ?) ";					
+				+"and o.FlyToAirportID = ?) ";	
+	*/
 	private String checkCapacity =  "select count(FSFlightNumber) "
 			+"from FlightSequences "
 			+"where FSFlightNumber=?";
@@ -75,17 +77,7 @@ public class allQueries{
 	public allQueries(String oB, String classE) {	
 		this.classE = classE;
 		this.priceType+=classE;
-		this.orderBy = oB;
-				//2 FlyFromAirport
-				//3 dDate
-				//4 dDate2
-				//5 FlyToAirport
-					//9 FlyFromAirport
-					//10 dDate
-					//11 dDate2
-					//12 FlyToAirport
-				//13 FlyToAirport
-		
+		this.orderBy = oB;		
 	}
 	
 	public ArrayList<java.sql.Date> makeFlexibleDates(String dDate, String aDate, String flexible) throws ParseException{
