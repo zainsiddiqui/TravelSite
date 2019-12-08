@@ -6,6 +6,17 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+body{
+	text-align: center;
+	background-color: azure;
+	font-size:	20px;
+	color: cadetblue;
+	font-family: arial;
+	
+	
+}
+</style>
 <body style = "background-color:azure">
 <%
 String details = request.getParameter("account");

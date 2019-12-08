@@ -7,10 +7,12 @@
 <title>Welcome to EZFlights!</title>
 <style>
 body{
+	background-image: url("planegif.gif");
+	background-size: cover;
 	text-align: center;
 	background-color: azure;
 	font-size:	20px;
-	color: cadetblue;
+	color: black;
 	font-family: arial;
 	
 	
@@ -25,10 +27,10 @@ body{
 String details = request.getParameter("account");
 if (details == null || details.equals("off")){
 String link = "login.jsp?login=true";
-out.println("<a href ="+link+">Login</a>");
+out.println("<br><br><b><a href ="+link+">Login</a></b>");
 
 String link1 = "signup.jsp?faults=none";
-out.println("<a href ="+link1+">Signup</a>");
+out.println("<br><br><br><b><a href ="+link1+">Signup</a></b>");
 } else {
 String link = "signout.jsp";
 out.println("<a href ="+link+">Signout</a>");
