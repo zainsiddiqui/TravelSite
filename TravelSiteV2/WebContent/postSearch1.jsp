@@ -10,8 +10,14 @@
 <title>Search Results</title>
 </head>
 <body style = "background-color:azure">
-
-
+<style>
+table {
+	border: 1px solid black;
+}
+td {
+	padding: 10px;
+}
+</style>
 <%
 String link = "signout.jsp";
 out.println("<a href ="+link+">Signout</a>");
