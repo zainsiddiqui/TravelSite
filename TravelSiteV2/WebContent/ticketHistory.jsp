@@ -270,7 +270,7 @@ while (rs.next()){
 	out.print("<td>");
 	if (edit && cancelDate == null) {
 		String post = "post";
-		String editer = "edit.jsp";
+		String editer = "editTicket.jsp";
 		String hidden = "hidden";
 		String name1 = "tix";
 		String tN = Integer.toString(ticketNumber);
@@ -278,7 +278,6 @@ while (rs.next()){
 		String type = "submit";
 		out.print("<form method="+post+" action="+editer+">");
 		out.print("<input type="+hidden+" name="+name1+" value="+tN+">");
-		out.print("<button name="+editButton+" type="+type+" value="+tN+">Edit!</button> ");
 		out.print("</form>");
 	}
 	out.print("</td>");
