@@ -7,9 +7,63 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin- Customer Page</title>
+<style>
+	body{
+		background-color:azure;
+	
+	}
+	
+	table, td, th{
+		
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	td{
+		width: 300px;
+	}
+	
+	table {
+		text-align:center;
+	}
+	
+	
+	#search{
+		color: lightslategray;
+		font-size: large;
+		text-decoration: underline;
+		text-align:center;
+	}
+	#edit{
+		color: lightseagreen;
+		font-size: large;
+		text-decoration: underline;
+		text-align:center;
+	}
+	
+	#delete{
+		color: indianred;
+		font-size: large;
+		text-decoration: underline;
+		text-align:center;
+	}
+	
+	#info{
+		text-align:center;
+	}
+	
+	#username, #password, #email, #name{
+		text-decoration: underline;
+		color: lightseagreen;
+	}
+	
+	
+
+</style>
 </head>
-<body style = "background-color:azure">
+<body>
 <%  
 
  		List<String> list = new ArrayList<String>();
@@ -38,20 +92,20 @@
 			//make a row
 			out.print("<tr>");
 			//make a column
-			out.print("<td>");
+			out.print("<td id= 'username'>");
 			//print out column header
 			out.print("Username");
 			out.print("</td>");
 			//make a column
-			out.print("<td>");
+			out.print("<td id= 'password'>");
 			out.print("Password");
 			out.print("</td>");
 			//make a column
-			out.print("<td>");
+			out.print("<td id= 'email'>");
 			out.print("Email");
 			out.print("</td>");
 			//make a column
-			out.print("<td>");
+			out.print("<td id= 'name'>");
 			out.print("Name");
 			out.print("</td>");
 			out.print("</tr>");
@@ -85,20 +139,25 @@
 		}
 %>
 <form action="AdminEditCustomer" method="post">
-<pre>
+<pre id = "info">
 *New Username field must be filled out when Editing or Deleting*
-Search: The entered users information is listed above, hit Submit without entering any info to return 
-        to home screen
-Edit: Enter the username you want to edit in New Username field and change any values you wish to edit. 
-      Keep in mind if you leave any boxes empty it will set that boxes information to NULL
-Delete: Enter the username you want to delete the information for in New Username and leave blank 
-        the information you wish to delete
+
+<div id= "search">Search:</div>The entered users information is listed above, 
+hit Submit without entering any info to return to home screen.
+
+<div id= "edit">Edit:</div>Enter the username you want to edit in New Username field and change any values you wish to edit. 
+Keep in mind if you leave any boxes empty it will set that boxes information to NULL.
+
+<div id ="delete">Delete:</div>Enter the username you want to delete the information for in New Username 
+and leave blank the information you wish to delete
+</pre>
+<pre>
 <%---/*Username: ---%><input type="hidden" name="oldUsername" value =<%=request.getParameter("searchCustomer")%>>
 Enter New Username: <input type="text" name="newUsername">
 Enter New Password: <input type="text" name="newPassword">
 Enter New Email: <input type="text" name="newEmail">
 Enter New Name: <input type="text" name="newName">
-	<input type="submit" value="Submit">
+	<input type="submit" value="Submit" style = "margin-left: 39%">
 </pre>
 </form>
 </body>
