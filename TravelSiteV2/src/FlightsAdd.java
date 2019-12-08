@@ -124,7 +124,7 @@ public class FlightsAdd extends HttpServlet {
 		
 		
 		
-		response.sendRedirect("EmployeeHome.jsp?");
+		response.sendRedirect("EmployeeHome.jsp?account=on");
 	}
 
 }

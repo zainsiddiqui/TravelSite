@@ -13,9 +13,16 @@
 <h1> Edit Customer Flights </h1>
 Username <input type="text" name="Username">
 TicketNumber <input type="text" name="TicketNumber">
-Class (econ,bus,first)<input type="text" name="Class">
-Meal <input type="text" name="meal">
 
+Class
+<input type="radio" name="Class" value="econ"/> Economy
+<input type="radio" name="Class" value="bus"/> Business
+<input type="radio" name="Class" value="first"/> First
+
+Meal
+<input type="radio" name="meal" value="Vegetarian"/> Vegetarian
+<input type="radio" name="meal" value="Normal"/> Normal
+<input type="radio" name="meal" value="Non-Vegetarian"/> Non-Vegetarian
 
 <input type="submit" value="Submit">
 </form>
